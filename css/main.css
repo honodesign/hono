@@ -16,7 +16,7 @@ body{
     margin: 0;
     max-width: 2000px;
 }
-#logo{
+header{
     position: absolute;
     top: 20px;
     left: 20px;
@@ -31,7 +31,7 @@ svg{
     align-items: center;
     justify-content: center;
 }
-.right{
+nav{
     display: flex;
     height: 96vh;
     width: 18%;
@@ -130,7 +130,7 @@ p, li{
     .left{
         width: 70%;
     }
-    .right{
+    nav{
         width: 30%;
         margin: 2vh 2%;
     }
@@ -146,7 +146,7 @@ p, li{
     .left{
         width: 100%;
     }
-    .right{
+    nav{
         width: 88%;
         margin: 2vh 6%;
     }
