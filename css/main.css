@@ -10,11 +10,13 @@
     --primary: #000;
     --secondary: #000;
 }
-
 body{
     display: flex;
     margin: 0;
     max-width: 2000px;
+}
+a{
+    text-decoration: none;
 }
 header{
     position: absolute;
@@ -70,7 +72,7 @@ nav{
 canvas{
     width: 160px;
 }
-button{
+.button{
     font-family: 'Satoshi-Bold';
     font-size: 18px;
     width: 100%;
@@ -81,8 +83,9 @@ button{
     background-color: var(--primary);
     margin-top: 18px;
     transition-duration: 0.3s;
+    text-align: center;
 }
-button:hover{
+.button:hover{
     transition-duration: 0.2s;
     scale: 1.05;
     transform:translateY(-4px);
