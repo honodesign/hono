@@ -100,25 +100,22 @@ button:hover{
     outline: none;
 }
 
-.b17{
+strong{
     font-family: 'Satoshi-Bold';
-    font-size: 17px;
+    font-size: 16px;
     color: var(--primary);
 }
-.r17, li{
-    font-family: 'Satoshi-Regular';
-    font-size: 17px;
-    color: var(--primary);
-    opacity: 0.7;
-}
-.r16{
+p, li{
     font-family: 'Satoshi-Regular';
     font-size: 16px;
     color: var(--primary);
+    opacity: 0.7;
+    margin: 0;
+}
+.onboarding{
     position: absolute;
     text-align: center;
     bottom: 100px;
-    opacity: 0.7;
 }
 .subline{
     font-family: 'Satoshi-Medium';
