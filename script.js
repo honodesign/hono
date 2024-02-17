@@ -126,4 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fetchData();
+
+    var outboundLink = document.getElementById('on-demand-link');
+    if (outboundLink) {
+        outboundLink.addEventListener('click', function() {
+        // Send an event to GA4
+        gtag('event', 'click', {
+            'event_category': 'Outbound Link',
+            'event_label': 'On-Demand Link',
+            'transport_type': 'beacon'
+        });
+        });
+    }
 });
