@@ -138,4 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         });
     }
+    var outboundLink = document.getElementById('buy-link');
+    if (outboundLink) {
+        outboundLink.addEventListener('click', function() {
+        // Send an event to GA4
+        gtag('event', 'click', {
+            'event_category': 'Outbound Link',
+            'event_label': 'Buy Link - ' + currentLogoPath,
+            'transport_type': 'beacon'
+        });
+        });
+    }
 });
