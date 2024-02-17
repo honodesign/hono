@@ -1,0 +1,159 @@
+@import url('satoshi.css');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
+
+.family01 { font-family: "Satoshi-Bold"; }
+.family02 { font-family: "Playfair Display", serif; }
+.family03 { font-family: "DM Sans", sans-serif;letter-spacing: 6px; }
+
+:root {
+    --primary: #000;
+    --secondary: #000;
+}
+
+body{
+    display: flex;
+    margin: 0;
+    max-width: 2000px;
+}
+#logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+svg{
+    color: var(--primary);
+}
+.left{
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right{
+    display: flex;
+    height: 96vh;
+    width: 18%;
+    margin: 2vh 1%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.scroller {
+    overflow-y: auto;
+}
+.divider{
+    height: 1px;
+    width: 100%;
+    margin-bottom: 26px;
+    background-color: var(--primary);
+    opacity: 0.1;
+}
+.feat{
+    margin: 34px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.why{
+    margin: 0 0 34px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.why :first-child{
+    font-size: 24px;
+    width: 80%;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+canvas{
+    width: 160px;
+}
+button{
+    font-family: 'Satoshi-Bold';
+    font-size: 18px;
+    width: 100%;
+    padding: 20px 0;
+    color: var(--secondary);
+    border: none;
+    cursor: pointer;
+    background-color: var(--primary);
+    margin-top: 18px;
+    transition-duration: 0.3s;
+}
+button:hover{
+    transition-duration: 0.2s;
+    scale: 1.05;
+    transform:translateY(-4px);
+}
+.brand{
+    width: fit-content;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#title{
+    margin-left: 40px;
+    font-size: 160px;
+    outline: none;
+}
+
+.b17{
+    font-family: 'Satoshi-Bold';
+    font-size: 17px;
+    color: var(--primary);
+}
+.r17, li{
+    font-family: 'Satoshi-Regular';
+    font-size: 17px;
+    color: var(--primary);
+    opacity: 0.7;
+}
+.r16{
+    font-family: 'Satoshi-Regular';
+    font-size: 16px;
+    color: var(--primary);
+    position: absolute;
+    text-align: center;
+    bottom: 100px;
+    opacity: 0.7;
+}
+.subline{
+    font-family: 'Satoshi-Medium';
+    text-align: center;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+@media (max-width: 1400px) {
+    .left{
+        width: 70%;
+    }
+    .right{
+        width: 30%;
+        margin: 2vh 2%;
+    }
+    .brand{
+        scale: 0.74;
+    }
+}
+
+@media (max-width: 800px) {
+    body{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 88%;
+        margin: 2vh 6%;
+    }
+    .brand{
+        scale: 0.6;
+    }
+}
