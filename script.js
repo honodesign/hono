@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const buyButton = document.getElementById('buy-link');
             if (buyButton) {
-                buyButton.href = buyLink + "?logo=0&desc=0";
+                buyButton.href = buyLink;
             }
             const priceAmount = document.getElementById('price-amount');
             if (priceAmount) {
