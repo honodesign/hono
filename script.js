@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 data = rows.map(row => {
                     const parts = row.split(',');
                     // Validate row format: it should have exactly 3 parts (title, logo, fontFamily)
-                    if (parts.length === 4) {
-                        const [title, logoName, fontFamily, buyLink] = parts;
+                    if (parts.length === 5) {
+                        const [title, logoName, fontFamily, price, buyLink] = parts;
                         // Further validation can ensure title and logo are not empty
                         if (title.trim() && logoName.trim()) {
                             const logo = `logos/${logoName.trim()}.png`;
                             currentLogoPath = logo; // Update the global color variable
                             document.dispatchEvent(new CustomEvent('logoUpdated'));
-                            return { title, logo, fontFamily, buyLink };
+                            return { title, logo, fontFamily, price, buyLink };
                         }
                     }
                     // For rows that don't meet the criteria, you could return a default object or skip them
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update the content, apply random colors, and set the font family
     function updateContent() {
         if (data[currentIndex] && colors.length > 0) {
-            const { logo, fontFamily, buyLink } = data[currentIndex];
+            const { logo, fontFamily, price, buyLink } = data[currentIndex];
             const randomIndex = Math.floor(Math.random() * colors.length);
             const { titleColor, backgroundColor } = colors[randomIndex];
 
@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const buyButton = document.getElementById('buy-link');
             if (buyButton) {
                 buyButton.href = buyLink + "?logo=0&desc=0";
+            }
+            const priceAmount = document.getElementById('price-amount');
+            if (priceAmount) {
+                priceAmount.textContent = "$" + price;
             }
         }
     }
