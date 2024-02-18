@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 data = rows.map(row => {
                     const parts = row.split(',');
                     // Validate row format: it should have exactly 3 parts (title, logo, fontFamily)
-                    if (parts.length === 3) {
-                        const [title, logoName, fontFamily] = parts;
+                    if (parts.length === 4) {
+                        const [title, logoName, fontFamily, buyLink] = parts;
                         // Further validation can ensure title and logo are not empty
                         if (title.trim() && logoName.trim()) {
                             const logo = `logos/${logoName.trim()}.png`;
                             currentLogoPath = logo; // Update the global color variable
                             document.dispatchEvent(new CustomEvent('logoUpdated'));
-                            return { title, logo, fontFamily };
+                            return { title, logo, fontFamily, buyLink };
                         }
                     }
                     // For rows that don't meet the criteria, you could return a default object or skip them
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update the content, apply random colors, and set the font family
     function updateContent() {
         if (data[currentIndex] && colors.length > 0) {
-            const { logo, fontFamily } = data[currentIndex];
+            const { logo, fontFamily, buyLink } = data[currentIndex];
             const randomIndex = Math.floor(Math.random() * colors.length);
             const { titleColor, backgroundColor } = colors[randomIndex];
 
@@ -97,6 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Assuming data[currentIndex].logo contains the new logo path
             currentLogoPath = data[currentIndex].logo; // Update the global logo path
             document.dispatchEvent(new CustomEvent('logoUpdated')); // Trigger the canvas update
+
+            const buyButton = document.getElementById('buy-link');
+            if (buyButton) {
+                buyButton.href = buyLink + "?logo=0&desc=0";
+            }
         }
     }
 
